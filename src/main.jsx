@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ArrowUpRight, ChevronDown, ChevronRight, Compass, Mail, Menu, Play, ShieldCheck, Sparkles, TreePine, Users, X } from 'lucide-react';
+import mountainAlessia from '../Mountains/alessia-paggi-lijSWspkTXY-unsplash.jpg';
+import mountainBen from '../Mountains/ben-sp-DMxRKmQPRhY-unsplash.jpg';
+import mountainBenAlt from '../Mountains/ben-sp-DMxRKmQPRhY-unsplash (1).jpg';
+import mountainSergey from '../Mountains/sergey-pesterev-mfX814jtyro-unsplash.jpg';
+import mountainTom from '../Mountains/tom-cleary-vdMllb3x-1s-unsplash.jpg';
 import './styles.css';
 
 const images = {
@@ -17,6 +22,14 @@ const images = {
   zanzibarBeach: '/Images/med-j-ePeTsqcyUiI-unsplash.jpg'
 };
 
+const mountainImages = {
+  alessia: mountainAlessia,
+  ben: mountainBen,
+  benAlt: mountainBenAlt,
+  sergey: mountainSergey,
+  tom: mountainTom
+};
+
 const safaris = [
   { days: '03 DAYS', title: 'The Great North', places: 'Tarangire · Ngorongoro', price: '$1,280', image: images.elephants, tag: 'BESTSELLER' },
   { days: '05 DAYS', title: 'Serengeti in Full', places: 'Serengeti · Ngorongoro · Tarangire', price: '$2,460', image: images.lion, tag: 'WILDLIFE' },
@@ -24,9 +37,9 @@ const safaris = [
 ];
 
 const routes = [
-  { days: '7 DAYS', title: 'Machame Route', meta: 'Challenging · 62 km', image: images.mountainClimbers },
-  { days: '8 DAYS', title: 'Lemosho Route', meta: 'Exceptional scenery · 70 km', image: images.mountainWide },
-  { days: '6 DAYS', title: 'Marangu Route', meta: 'Mountain huts · 72 km', image: images.highCountry }
+  { days: '7 DAYS', title: 'Machame Route', meta: 'Challenging · 62 km', image: mountainImages.alessia },
+  { days: '8 DAYS', title: 'Lemosho Route', meta: 'Exceptional scenery · 70 km', image: mountainImages.sergey },
+  { days: '6 DAYS', title: 'Marangu Route', meta: 'Mountain huts · 72 km', image: mountainImages.tom }
 ];
 
 const heroSlides = [
@@ -74,10 +87,11 @@ const imageLibrary = {
     { image: '/Images/sutirta-budiman-kjOBqwMUnWw-unsplash.jpg', title: 'Migration season', alt: 'Wildlife moving across the savannah' }
   ],
   'Mountain climbs': [
-    { image: images.mountainClimbers, title: 'On the trail', alt: 'Climbers hiking toward Mount Kilimanjaro' },
-    { image: images.mountainWide, title: 'Above the clouds', alt: 'Mountain landscape above the clouds' },
-    { image: images.highCountry, title: 'The high country', alt: 'High altitude landscape on Mount Kilimanjaro' },
-    { image: '/Images/marcel-kovacic-dhd2lxJcPrM-unsplash.jpg', title: 'Summit air', alt: 'High altitude mountain adventure' }
+    { image: mountainImages.alessia, title: 'On the trail', alt: 'Climbers hiking toward Mount Kilimanjaro' },
+    { image: mountainImages.ben, title: 'Above the clouds', alt: 'Mountain landscape above the clouds' },
+    { image: mountainImages.benAlt, title: 'The high country', alt: 'High altitude landscape on Mount Kilimanjaro' },
+    { image: mountainImages.sergey, title: 'Summit air', alt: 'Climbers in a high altitude mountain landscape' },
+    { image: mountainImages.tom, title: 'Mountain light', alt: 'Mountain landscape on a Kilimanjaro route' }
   ],
   'Tanzania coast': [
     { image: images.zanzibar, title: 'Zanzibar from above', alt: 'Aerial view of the Zanzibar coast' },
@@ -139,7 +153,7 @@ function App() {
       </div>
       <header className="nav-wrap">
         <nav className="container nav">
-          <button className="brand" onClick={() => scrollTo('top')} aria-label="Simonov Trekking & Safaris home"><span className="brand-mark">S</span><span><b>SIMONOV</b><small>TREKKING & SAFARIS</small></span></button>
+          <button className="brand" onClick={() => scrollTo('top')} aria-label="Simonov Trekking & Safaris home"><img className="brand-logo" src="/simonov-logo.svg" alt="Simonov Trekking & Safaris" /></button>
           <div className={`nav-links ${menuOpen ? 'is-open' : ''}`}>
             <button onClick={() => scrollTo('top')}>{copy.home}</button><button onClick={() => scrollTo('safaris')}>{copy.safaris} <ChevronDown size={13} /></button><button onClick={() => scrollTo('climb')}>{copy.kilimanjaro} <ChevronDown size={13} /></button><button onClick={() => scrollTo('experiences')}>{copy.experiences}</button><button onClick={() => scrollTo('story')}>{copy.story}</button><button onClick={() => scrollTo('journal')}>{copy.journal}</button>
           </div>
