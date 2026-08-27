@@ -10,11 +10,12 @@ import './styles.css';
 
 const images = {
   safariVehicle: '/Images/ashim-d-silva-h8b1T39sm2w-unsplash.jpg',
-  elephants: '/Images/erwin-gerber-o9_hNU0ywgU-unsplash.jpg',
+  elephants: '/Gallary/Great North.jpeg',
+  elephantCountry: '/Images/erwin-gerber-o9_hNU0ywgU-unsplash.jpg',
   savannah: '/Images/hu-chen-3yd8oXGoLqM-unsplash.jpg',
   lion: '/Images/magdalena-kula-manchee-nVUZO1gc_-o-unsplash.jpg',
   leopard: '/Images/denice-alex-HrcPumKuhfM-unsplash.jpg',
-  migration: '/Images/redcharlie-nf7W_hn6DKQ-unsplash.jpg',
+  migration: '/Gallary/Migration.jpeg',
   mountainClimbers: '/Images/crispin-jones-DDEBAl7ULAo-unsplash.jpg',
   mountainWide: '/Images/hu-chen-BRXn1JtdXtc-unsplash.jpg',
   highCountry: '/Images/dawn-westveld-FmUx8z_Tz4A-unsplash.jpg',
@@ -80,7 +81,7 @@ const russianCopy = {
 const imageLibrary = {
   Safaris: [
     { image: images.safariVehicle, title: 'Safari in the wild', alt: 'Safari vehicle on the Tanzanian plains' },
-    { image: images.elephants, title: 'Elephant country', alt: 'Elephants near a safari vehicle' },
+    { image: images.elephantCountry, title: 'Elephant country', alt: 'Elephants near a safari vehicle' },
     { image: images.savannah, title: 'Open horizons', alt: 'Tanzanian savannah landscape' },
     { image: images.lion, title: 'Wildlife up close', alt: 'Lion beside a safari vehicle' },
     { image: '/Images/stephan-bechert-1ZfMAnL4ubE-unsplash.jpg', title: 'Safari tracks', alt: 'Safari landscape and wildlife' },
@@ -153,7 +154,7 @@ function App() {
       </div>
       <header className="nav-wrap">
         <nav className="container nav">
-          <button className="brand" onClick={() => scrollTo('top')} aria-label="Simonov Trekking & Safaris home"><img className="brand-logo" src="/simonov-logo.svg" alt="Simonov Trekking & Safaris" /></button>
+          <button className="brand" onClick={() => scrollTo('top')} aria-label="Simonov Trekking & Safaris home"><img className="brand-logo" src="/Gallary/logo.jpeg" alt="Simonov Trekking & Safaris" /></button>
           <div className={`nav-links ${menuOpen ? 'is-open' : ''}`}>
             <button onClick={() => scrollTo('top')}>{copy.home}</button><button onClick={() => scrollTo('safaris')}>{copy.safaris} <ChevronDown size={13} /></button><button onClick={() => scrollTo('climb')}>{copy.kilimanjaro} <ChevronDown size={13} /></button><button onClick={() => scrollTo('experiences')}>{copy.experiences}</button><button onClick={() => scrollTo('story')}>{copy.story}</button><button onClick={() => scrollTo('journal')}>{copy.journal}</button>
           </div>
