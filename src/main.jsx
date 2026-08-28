@@ -44,7 +44,7 @@ const routes = [
 ];
 
 const heroSlides = [
-  { image: images.safariVehicle, label: 'THE WILD NORTH', phrase: 'Wildlife stories.' }
+  { image: '/Gallary/Background photo.jpeg', label: 'THE WILD NORTH', phrase: 'Wildlife stories.' }
 ];
 
 const translations = {
