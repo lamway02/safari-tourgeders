@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client';
 import { ArrowUpRight, ChevronDown, ChevronRight, Compass, Mail, Menu, Play, ShieldCheck, Sparkles, TreePine, Users, X } from 'lucide-react';
 import mountainAlessia from '../Mountains/alessia-paggi-lijSWspkTXY-unsplash.jpg';
 import mountainBen from '../Mountains/ben-sp-DMxRKmQPRhY-unsplash.jpg';
-import mountainBenAlt from '../Mountains/ben-sp-DMxRKmQPRhY-unsplash (1).jpg';
 import mountainSergey from '../Mountains/sergey-pesterev-mfX814jtyro-unsplash.jpg';
 import mountainTom from '../Mountains/tom-cleary-vdMllb3x-1s-unsplash.jpg';
 import './styles.css';
@@ -26,7 +25,6 @@ const images = {
 const mountainImages = {
   alessia: mountainAlessia,
   ben: mountainBen,
-  benAlt: mountainBenAlt,
   sergey: mountainSergey,
   tom: mountainTom
 };
@@ -83,16 +81,12 @@ const imageLibrary = {
     { image: images.safariVehicle, title: 'Safari in the wild', alt: 'Safari vehicle on the Tanzanian plains' },
     { image: images.elephantCountry, title: 'Elephant country', alt: 'Elephants near a safari vehicle' },
     { image: images.savannah, title: 'Open horizons', alt: 'Tanzanian savannah landscape' },
-    { image: images.lion, title: 'Wildlife up close', alt: 'Lion beside a safari vehicle' },
     { image: '/Images/stephan-bechert-1ZfMAnL4ubE-unsplash.jpg', title: 'Safari tracks', alt: 'Safari landscape and wildlife' },
     { image: '/Images/sutirta-budiman-kjOBqwMUnWw-unsplash.jpg', title: 'Migration season', alt: 'Wildlife moving across the savannah' }
   ],
   'Mountain climbs': [
-    { image: mountainImages.alessia, title: 'On the trail', alt: 'Climbers hiking toward Mount Kilimanjaro' },
     { image: mountainImages.ben, title: 'Above the clouds', alt: 'Mountain landscape above the clouds' },
-    { image: mountainImages.benAlt, title: 'The high country', alt: 'High altitude landscape on Mount Kilimanjaro' },
-    { image: mountainImages.sergey, title: 'Summit air', alt: 'Climbers in a high altitude mountain landscape' },
-    { image: mountainImages.tom, title: 'Mountain light', alt: 'Mountain landscape on a Kilimanjaro route' }
+    { image: '/Images/redcharlie-nf7W_hn6DKQ-unsplash.jpg', title: 'The high country', alt: 'High altitude landscape on Mount Kilimanjaro' }
   ],
   'Tanzania coast': [
     { image: images.zanzibar, title: 'Zanzibar from above', alt: 'Aerial view of the Zanzibar coast' },
@@ -181,7 +175,7 @@ function App() {
 
         <section className="intro-band"><div className="container intro-grid"><div><span className="eyebrow">{t('Your Tanzania, your way')}</span><h2>{t('Two worlds.')}<br /><em>{t('One extraordinary')}</em>{t(' journey.')}</h2></div><p>{t('We create unhurried adventures for curious people: days spent tracking elephants, nights beneath enormous skies, and mornings that begin above the clouds. Always local. Always personal.')}</p></div></section>
 
-        <section className="adventure-section" id="experiences"><div className="container"><div className="section-heading"><div><span className="eyebrow">{t('Choose your rhythm')}</span><h2>{t('What brings you')}<br /><em>{t('to Tanzania?')}</em></h2></div><p>{t('Whether you come for the untamed or the uphill, we will take you deeper into it.')}</p></div><div className="adventure-grid"><AdventureCard number="01" title={t('Wildlife safaris')} text={t('Follow the pulse of the plains, from the big five to the little-known corners in between.')} image={images.lion} onClick={() => scrollTo('safaris')} translate={t} /><AdventureCard number="02" title={t('Mountain climbing')} text={t("Find your altitude on Africa's highest peak, with a team that puts your safety first.")} image={images.mountainClimbers} onClick={() => scrollTo('climb')} translate={t} /><AdventureCard number="03" title={t('Local experiences')} text={t('Slow down for coffee, waterfalls, village walks and the stories beyond the guidebook.')} image={images.savannah} onClick={() => scrollTo('inquiry')} translate={t} /></div></div></section>
+        <section className="adventure-section" id="experiences"><div className="container"><div className="section-heading"><div><span className="eyebrow">{t('Choose your rhythm')}</span><h2>{t('What brings you')}<br /><em>{t('to Tanzania?')}</em></h2></div><p>{t('Whether you come for the untamed or the uphill, we will take you deeper into it.')}</p></div><div className="adventure-grid"><AdventureCard number="01" title={t('Wildlife safaris')} text={t('Follow the pulse of the plains, from the big five to the little-known corners in between.')} image={images.lion} onClick={() => scrollTo('safaris')} translate={t} /><AdventureCard number="02" title={t('Mountain climbing')} text={t("Find your altitude on Africa's highest peak, with a team that puts your safety first.")} image={images.mountainClimbers} onClick={() => scrollTo('climb')} translate={t} /><AdventureCard number="03" title={t('Local experiences')} text={t('Slow down for coffee, waterfalls, village walks and the stories beyond the guidebook.')} image={images.leopard} onClick={() => scrollTo('inquiry')} translate={t} /></div></div></section>
 
         <section className="image-library" id="gallery"><div className="container"><div className="section-heading"><div><span className="eyebrow">{t('From our field notes')}</span><h2>{t('See Tanzania')}<br /><em>{t('your way.')}</em></h2></div><div className="gallery-switcher" role="tablist" aria-label="Image categories">{Object.keys(imageLibrary).map((category) => <button key={category} role="tab" aria-selected={galleryCategory === category} className={galleryCategory === category ? 'gallery-tab active' : 'gallery-tab'} onClick={() => setGalleryCategory(category)}>{t(category)}</button>)}</div></div><div className="gallery-grid">{imageLibrary[galleryCategory].map((item) => <figure key={item.title} className="gallery-item"><img src={item.image} alt={item.alt} /><figcaption><span>{galleryCategory === 'Safaris' ? t('SAFARI') : galleryCategory === 'Mountain climbs' ? t('KILIMANJARO') : t('ZANZIBAR')}</span><b>{t(item.title)}</b></figcaption></figure>)}</div></div></section>
 
